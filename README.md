@@ -17,6 +17,10 @@ Since the JVM uses UTF-16, accessing bold and italic characters requires the use
 
 Alternatively, we can store ready-to-use characters in an array and calculate the position of a character as `'A'..'Z' -> adjacencyList[char - 'A']`. Where we map regular letters to Unicode characters from the extended table. This approach is less memory efficient but quicker to implement. For now, I prioritize speed over the complexity of calculating code points and verifying surrogate pairs.
 
+## Results
+
+You can find the original `.md` file in `post.md` and the conversion result in `result.txt` in the root folder of the project
+
 ## Future Work
 
 This is a quick solution that solves my immediate need for automating the conversion of `.md` files into LinkedIn-styled text. In the future, I may refactor the code or add more features if I have time, but for now, I do not plan to make any changes. 😊
