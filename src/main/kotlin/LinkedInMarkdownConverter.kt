@@ -1,4 +1,5 @@
 import org.commonmark.node.BulletList
+import org.commonmark.node.Code
 import org.commonmark.node.Document
 import org.commonmark.node.FencedCodeBlock
 import org.commonmark.node.Heading
@@ -30,7 +31,8 @@ class LinkedInMarkdownConverter {
             is BulletList -> processBulletList(node, result)
             is Link -> processLink(node, result)
             is StrongEmphasis -> processStrongEmphasis(node, result)
-            is FencedCodeBlock -> processCode(node, result)
+            is FencedCodeBlock -> processCodeBlock(node, result)
+            is Code -> processCode(node, result)
             is Text -> processText(node, result)
         }
     }
@@ -90,8 +92,13 @@ class LinkedInMarkdownConverter {
         processChildren(node, result)
     }
 
-    private fun processCode(node: FencedCodeBlock, result: StringBuilder) {
+    private fun processCodeBlock(node: FencedCodeBlock, result: StringBuilder) {
         val data = italicUnicodeConverter.convert(node.literal)
         result.appendLine(data)
+    }
+
+    private fun processCode(node: Code, result: StringBuilder) {
+        val data = italicUnicodeConverter.convert(node.literal)
+        result.append(data)
     }
 }

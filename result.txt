@@ -4,7 +4,7 @@ Many of us use sequences in our projects and work with a variety of operators, b
 
 𝗛𝗼𝘄 𝗦𝗲𝗾𝘂𝗲𝗻𝗰𝗲𝘀 𝗪𝗼𝗿𝗸 𝗶𝗻 𝗞𝗼𝘁𝗹𝗶𝗻
 
-Each  in Kotlin is an interface that exposes an :
+Each 𝘚𝘦𝘲𝘶𝘦𝘯𝘤𝘦 in Kotlin is an interface that exposes an 𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳:
 
 𝘱𝘶𝘣𝘭𝘪𝘤 𝘪𝘯𝘵𝘦𝘳𝘧𝘢𝘤𝘦 𝘚𝘦𝘲𝘶𝘦𝘯𝘤𝘦<𝘰𝘶𝘵 𝘛> {
     𝘱𝘶𝘣𝘭𝘪𝘤 𝘰𝘱𝘦𝘳𝘢𝘵𝘰𝘳 𝘧𝘶𝘯 𝘪𝘵𝘦𝘳𝘢𝘵𝘰𝘳(): 𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳<𝘛>
@@ -20,11 +20,11 @@ Here’s our class:
     𝘰𝘷𝘦𝘳𝘳𝘪𝘥𝘦 𝘧𝘶𝘯 𝘪𝘵𝘦𝘳𝘢𝘵𝘰𝘳(): 𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳<𝘛> = 𝘖𝘥𝘥𝘗𝘰𝘴𝘪𝘵𝘪𝘰𝘯𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳(𝘴𝘰𝘶𝘳𝘤𝘦)
 }
 
-This class uses a form of the 𝗱𝗲𝗰𝗼𝗿𝗮𝘁𝗼𝗿 𝗽𝗮𝘁𝘁𝗲𝗿𝗻 — we decorate the iteration process of the upstream sequence. The  class takes the upstream sequence, iterates over it, selects elements at odd positions, and passes them to its iterator.
+This class uses a form of the 𝗱𝗲𝗰𝗼𝗿𝗮𝘁𝗼𝗿 𝗽𝗮𝘁𝘁𝗲𝗿𝗻 — we decorate the iteration process of the upstream sequence. The 𝘖𝘥𝘥𝘚𝘦𝘲𝘶𝘦𝘯𝘤𝘦 class takes the upstream sequence, iterates over it, selects elements at odd positions, and passes them to its iterator.
 
-Now, we need a specialized iterator to check whether an element’s index is odd or even. To simplify the implementation, we use , which is a utility class that helps calculate the next element lazily when  or  is called.
+Now, we need a specialized iterator to check whether an element’s index is odd or even. To simplify the implementation, we use 𝘈𝘣𝘴𝘵𝘳𝘢𝘤𝘵𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳, which is a utility class that helps calculate the next element lazily when 𝘯𝘦𝘹𝘵() or 𝘩𝘢𝘴𝘕𝘦𝘹𝘵() is called.
 
-Here’s what the iterator looks like. It iterates through the upstream sequence, finds the next odd-positioned element, and adds it using . When no elements remain, we call .
+Here’s what the iterator looks like. It iterates through the upstream sequence, finds the next odd-positioned element, and adds it using 𝘴𝘦𝘵𝘕𝘦𝘹𝘵(). When no elements remain, we call 𝘥𝘰𝘯𝘦().
 
 𝘪𝘯𝘵𝘦𝘳𝘯𝘢𝘭 𝘤𝘭𝘢𝘴𝘴 𝘖𝘥𝘥𝘗𝘰𝘴𝘪𝘵𝘪𝘰𝘯𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳<𝘛>(𝘴𝘰𝘶𝘳𝘤𝘦: 𝘚𝘦𝘲𝘶𝘦𝘯𝘤𝘦<𝘛>) : 𝘈𝘣𝘴𝘵𝘳𝘢𝘤𝘵𝘐𝘵𝘦𝘳𝘢𝘵𝘰𝘳<𝘛>() {
     𝘱𝘳𝘪𝘷𝘢𝘵𝘦 𝘷𝘢𝘳 𝘪𝘯𝘥𝘦𝘹 = 0
@@ -58,7 +58,7 @@ At this point, you might be wondering, “How do I use this in practice?” It�
         .𝘵𝘰𝘓𝘪𝘴𝘵()
 }
 
-You just create an extension function on  to apply the operator and you’re ready to go.
+You just create an extension function on 𝘚𝘦𝘲𝘶𝘦𝘯𝘤𝘦 to apply the operator and you’re ready to go.
 
 𝗖𝗼𝗻𝗰𝗹𝘂𝘀𝗶𝗼𝗻
 
